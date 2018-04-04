@@ -1,8 +1,8 @@
 version: '2'
 services:
-  ml8node1: 
+  ml9node1: 
     build: .
-    image: ml8:build
+    image: ml9:build
     expose:
       - "7997"
       - "7998"
@@ -14,8 +14,8 @@ services:
       - "8010:8010"
     hostname: "ml1.local"
     container_name: "ml1.local"
-  ml8node2:
-    image: ml8:build
+  ml9node2:
+    image: ml9:build
     expose:
       - "7997"
       - "7998"
@@ -28,9 +28,9 @@ services:
     hostname: "ml2.local"
     container_name: "ml2.local"
     links:
-      - ml8node1:ml8node1
-  ml8node3:
-    image: ml8:build
+      - ml9node1:ml9node1
+  ml9node3:
+    image: ml9:build
     expose:
       - "7997"
       - "7998"
@@ -43,5 +43,5 @@ services:
     hostname: "ml3.local"
     container_name: "ml3.local"
     links:
-      - ml8node1:ml8node1
-      - ml8node2:ml8node2
+      - ml9node1:ml9node1
+      - ml9node2:ml9node2

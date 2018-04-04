@@ -5,7 +5,7 @@
 #
 # Get the latest CentOS 7 image
 FROM centos:7
-MAINTAINER Alan Johnson <alan.johnson@marklogic.com>
+MAINTAINER Vincent Dupain <vdupain@gmail.com>
 
 # Get any CentOS updates then clear the Docker cache
 RUN yum -y update && yum clean all
@@ -20,7 +20,7 @@ RUN yum -y install initscripts && yum clean all
 ENV PATH /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/MarkLogic/mlcmd/bin
 
 # Copy the MarkLogic installer to a temp directory in the Docker image being built
-COPY MarkLogic-RHEL7-8.0-5.5.x86_64.rpm /tmp/MarkLogic.rpm
+COPY MarkLogic-9.0-4.x86_64.rpm /tmp/MarkLogic.rpm
 
 # Install MarkLogic then delete the .RPM file if the install succeeded
 RUN yum -y install /tmp/MarkLogic.rpm && rm /tmp/MarkLogic.rpm
@@ -33,3 +33,4 @@ EXPOSE 7997 7998 7999 8000 8001 8002
 # Start MarkLogic from the init.d script
 # Define default command for Docker to run (which avoids immediate shutdown)  /dev/null is the bit-bucket: the place where you dump anything you don't need.
 CMD /etc/init.d/MarkLogic start && tail -f /dev/null
+

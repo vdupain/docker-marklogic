@@ -1,8 +1,8 @@
-version: '2'
+version: '3'
 services:
   mlnode1: 
     build: .
-    image: ml8:build
+    image: ml9:build
 #    volumes:
 #      - ~/dev/docker/volumes/cluster/node1:/var/opt/MarkLogic
     expose:
@@ -17,7 +17,7 @@ services:
     hostname: "ml1.local"
     container_name: "ml1.local"
   mlnode2:
-    image: ml8:build
+    image: ml9:build
 #    volumes:
 #      - ~/dev/docker/volumes/cluster/node2:/var/opt/MarkLogic
     expose:
@@ -34,7 +34,7 @@ services:
     links:
       - mlnode1:mlnode1
   mlnode3:
-    image: ml8:build
+    image: ml9:build
 #    volumes:
 #      - ~/dev/docker/volumes/cluster/node3:/var/opt/MarkLogic
     expose:
