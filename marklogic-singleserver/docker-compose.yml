@@ -1,0 +1,19 @@
+version: '2'
+services:
+  ml9singleserver: 
+    build: .
+    image: ml9:build
+    volumes:
+      - $HOME/dev/docker/docker-marklogic/volumes/ml9singleserver:/var/opt/MarkLogic
+      - $HOME/dev/docker/docker-marklogic/apps:/var/opt/ML-apps
+    expose:
+      - "7997"
+      - "7998"
+      - "7999"
+    ports:
+      - "8000:8000"
+      - "8001:8001"
+      - "8002:8002"
+      - "8010-8020:8010-8020"
+    hostname: "ml9ss.local"
+    container_name: "ml9ss.local"
