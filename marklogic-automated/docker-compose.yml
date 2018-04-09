@@ -13,7 +13,7 @@ services:
       - "8000:8000"
       - "8001:8001"
       - "8002:8002"
-      - "8010:8010"
+      - "8010-8020:8010-8020"
     hostname: "ml1.local"
     container_name: "ml1.local"
   mlnode2:
@@ -28,7 +28,7 @@ services:
       - "18000:8000"
       - "18001:8001"
       - "18002:8002"
-      - "18010:8010"
+      - "18010-18020:8010-8020"
     hostname: "ml2.local"
     container_name: "ml2.local"
     links:
@@ -45,7 +45,7 @@ services:
       - "28000:8000"
       - "28001:8001"
       - "28002:8002"
-      - "28010:8010"
+      - "28010-28020:8010-8020"
     hostname: "ml3.local"
     container_name: "ml3.local"
     links:
