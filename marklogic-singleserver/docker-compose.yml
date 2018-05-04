@@ -4,8 +4,8 @@ services:
     build: .
     image: ml9:build
     volumes:
-      - $HOME/dev/docker/docker-marklogic/volumes/ml9singleserver:/var/opt/MarkLogic
-      - $HOME/dev/docker/docker-marklogic/apps:/var/opt/ML-apps
+      - ./data/volumes:/var/opt/MarkLogic
+      - ./data/apps:/var/opt/ML-apps
     expose:
       - "7997"
       - "7998"
